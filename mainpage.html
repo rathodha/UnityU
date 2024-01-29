@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UnityU</title>
+    <style>
+        body {
+            font-family: 'Serif',serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff; /* Green background color */
+            color: black; /* White text color */
+        }
+
+        header {
+            background-color: #ABC1D4;
+            color: #fff;
+            padding: 1em;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        header h1 {
+            margin: 0;
+            margin-left: 10px; /* Add margin to the left of h1 for spacing */
+        }
+
+        header img {
+            height: 80px; /* Adjust the height of the logo as needed */
+            margin-right: 20px; /* Add margin to the logo for spacing */
+        }
+
+        main {
+            padding: 2em;
+        }
+
+        .popup-form {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
+            width: 300px;
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 60%;
+            transform: translate(50%, -50%);
+            z-index: 999;
+        }
+
+        label, input, button {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input[type="email"],
+        input[type="password"],
+        input[type="text"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #ABC1D4;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        buttonbig {
+            width: 1in;
+            padding: 10px;
+            background-color: #ABC1D4;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .signup-btn {
+            margin-top: 10px;
+        }
+
+        footer {
+            background-color: #ABC1D4;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .signup-link {
+            color: #ABC1D4;
+            font-weight: normal;
+        }
+
+        .signup-link:hover {
+            text-decoration: underline;
+        }
+
+        a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <!-- Add the logo image within the h1 tag -->
+    <h1><a href="welcome.html"><img src="images/circlelo.png" alt="UnityU Logo" style="max-height: 100%;"></a>UnityU</h1>
+    <div>
+<!--        <a href="profile.html">MyUnityU</a>-->
+        <a href="aboutus.html">About Us</a>
+        <a href="mission.html">Mission</a>
+        <a href="help.html">Help</a>
+    </div>
+</header>
+
+<buttonbig onclick="openLoginForm()" style="margin-top: 10px;">Login</buttonbig>
+<buttonbig onclick="openSignupForm()" class="signup-btn">Sign Up</buttonbig>
+
+<!-- Login form pop-up -->
+<div id="loginPopup" class="popup-form">
+    <form id="loginForm">
+        <h2>Login</h2>
+        <label for="loginEmail">Email:</label>
+        <input type="email" id="loginEmail" name="loginEmail" required>
+        <label for="loginPassword">Password:</label>
+        <input type="password" id="loginPassword" name="loginPassword" required>
+        <button onclick="performLogin()" type="submit">Login</button>
+
+        <div style="text-align: center;">
+            <a class="signup-link" href="signup.html">Don't have an account? Sign Up</a>
+        </div>
+    </form>
+    <button onclick="closeLoginForm()" style="margin-top: 10px;">Close</button>
+</div>
+
+<!-- Signup form pop-up -->
+<div id="signupPopup" class="popup-form">
+    <form id="signupForm">
+        <h2>Sign Up</h2>
+        <label for="signupName">Name:</label>
+        <input type="text" id="signupName" name="signupName" required>
+        <label for="signupEmail">Email:</label>
+        <input type="email" id="signupEmail" name="signupEmail" required>
+        <label for="signupPassword">Password:</label>
+        <input type="password" id="signupPassword" name="signupPassword" required>
+        <button type="submit">Sign Up</button>
+    </form>
+    <button onclick="closeSignupForm()" style="margin-top: 10px;">Close</button>
+</div>
+
+<main>
+    <section class="mainpage-section">
+        <div class="mainpage-content">
+            <h1><b>Welcome to UnityU</b></h1>
+            <h2>Uniting U to your University</h2>
+            <img src="images\mainpage.jpg" alt="mainpage image" width="800">
+        </div>
+    </section>
+
+
+</main>
+<script src="data.js"></script>
+
+<!-- Add the ChatBot code here -->
+<!-- Start of ChatBot (www.chatbot.com) code -->
+<script type="text/javascript">
+    window.__be = window.__be || {};
+    window.__be.id = "65b607fcfb34d10007e265fb";
+    (function () {
+        var be = document.createElement('script'); be.type = 'text/javascript'; be.async = true;
+        be.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'cdn.chatbot.com/widget/plugin.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(be, s);
+    })();
+</script>
+<noscript>You need to <a href="https://www.chatbot.com/help/chat-widget/enable-javascript-in-your-browser/" rel="noopener nofollow">enable JavaScript</a> in order to use the AI chatbot tool powered by <a href="https://www.chatbot.com/" rel="noopener nofollow" target="_blank">ChatBot</a></noscript>
+<!-- End of ChatBot code -->
+
+<footer>
+    <p>&copy; 2024 UnityU. All rights reserved.</p>
+</footer>
+
+<script>
+    function openLoginForm() {
+        document.getElementById('loginPopup').style.display = 'block';
+    }
+
+    function closeLoginForm() {
+        document.getElementById('loginPopup').style.display = 'none';
+    }
+
+    function performLogin() {
+        var userEmail = document.getElementById('loginEmail').value;
+        var userPassword = document.getElementById('loginPassword').value;
+
+        // Check credentials (simplified, replace with server-side validation)
+        if (userEmail === 'spartan@msu.edu' && userPassword === 'MSU') {
+            alert('Login successful!');
+            closeLoginForm();
+            window.location.href = 'welcome.html';
+
+        } else {
+            alert('Invalid email or password. Please try again.');
+        }
+    }
+
+    function openSignupForm() {
+        document.getElementById('signupPopup').style.display = 'block';
+    }
+
+    function closeSignupForm() {
+        document.getElementById('signupPopup').style.display = 'none';
+    }
+
+    document.getElementById('loginForm').addEventListener('submit', function (event) {
+        event.preventDefault();
+        // alert('Login functionality not implemented.');
+
+        // in theory would take info keyed & crosscheck to secure database
+        closeLoginForm();
+
+    });
+
+    document.getElementById('signupForm').addEventListener('submit', function (event) {
+        event.preventDefault();
+        // alert('Signup functionality not implemented.');
+
+        // in theory would add information to the database
+        closeSignupForm();
+        window.location.href = 'userSetup.html';
+    });
+</script>
+
+</body>
+</html>

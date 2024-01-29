@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSV Data</title>
+</head>
+<body>
+
+<table border="1">
+    <thead>
+    <tr id="header-row"></tr>
+    </thead>
+    <tbody id="data-rows"></tbody>
+</table>
+
+<script>
+    function readCSVAndDisplay(filename) {
+        fetch(filename)
+            .then(response => response.text())
+            .then(data => {
+                const rows = data.split('\n');
+                const headers = rows[0].split(',');
+
+                // Display headers
+                const headerRow = document.getElementById('header-row');
+                headers.forEach(header => {
+                    const th = document.createElement('th');
+                    th.textContent = header;
+                    headerRow.appendChild(th);
+                });
+
+                // Display data rows
+                const dataRows = document.getElementById('data-rows');
+                for (let i = 1; i < rows.length; i++) {
+                    const row = rows[i].split(',');
+                    const tr = document.createElement('tr');
+                    row.forEach(cell => {
+                        const td = document.createElement('td');
+                        td.textContent = cell;
+                        tr.appendChild(td);
+                    });
+                    dataRows.appendChild(tr);
+                }
+            })
+            .catch(error => console.error('Error:', error));
+    }
+
+    readCSVAndDisplay('testdatabase.csv');
+</script>
+
+</body>
+</html>

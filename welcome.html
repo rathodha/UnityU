@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="style.css">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to UnityU</title>
+  <style>
+    /* Global styles */
+    @font-face {
+      font-family: 'Cambria';
+      src: local('Cambria'), local('Cambria Math'), url('path/to/cambria.woff') format('woff');
+    }
+
+    body {
+      font-family: 'Serif',serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f8f8f8;
+    }
+
+    header {
+      background-color: #ABC1D4;
+      color: #fff;
+      padding: 1em;
+      text-align: center;
+    }
+
+    header a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 20px;
+      font-weight: bold;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .welcome-message {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+    }
+
+    .mission {
+      display: flex;
+      justify-content: space-around;
+      align-items: center; /* Center the text vertically */
+      flex-wrap: wrap; /* Allow wrapping on smaller screens */
+      margin-bottom: 40px;
+    }
+
+    .mission-column {
+      flex: 1;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      text-align: center; /* Center the text horizontally */
+      margin-bottom: 20px; /* Add margin for spacing */
+    }
+
+    .mission img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin-top: 10px; /* Add margin for spacing */
+    }
+
+    .help-options {
+      display: flex;
+      justify-content: space-around;
+      margin-bottom: 40px;
+    }
+
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateY(100px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    body, header, .container, .welcome-message, .mission-column, .help-options {
+      animation: slideIn 0.5s ease-out; /* Add animation to elements */
+    }
+
+    .help-option {
+      width: 120px; /* Increase the width */
+      height: 120px; /* Increase the height */
+      font-size: 1.5em; /* Increase the font size */
+      border-radius: 50%;
+      background-color: #ABC1D4;
+      text-align: center;
+      line-height: 120px;
+      font-weight: bold;
+      color: #fff;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.5s ease; /* Adjusted for sliding animation */
+      animation: slideIn 0.5s ease-out; /* Add animation to help-option */
+    }
+
+    .help-option:hover {
+      background-color: #56799E;
+      transform: scale(1.1); /* Add a slight scale effect on hover */
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Welcome to UnityU</h1>
+
+  <a href="aboutus.html">About Us</a>
+  <a href="profile.html">MyUnityU</a>
+  <a href="mission.html">Mission</a>
+  <a href="help.html">Help</a>
+</header>
+
+<div class="container">
+  <!-- Welcome Message -->
+  <div class="welcome-message">
+    <strong>Welcome, <span id="userName"></span>!</strong>
+  </div>
+
+  <!-- Our Mission -->
+  <div class="mission">
+    <div class="mission-column">
+      <h2>Our Mission</h2>
+      <p>At UnityU, we unite communities through shared interests, leveraging each other’s individual skill sets. Our platform connects college students with others in their community, fostering meaningful connections and enabling personal and communal growth. As fellow students, we understand the value of easily accessible assistance. Join us to amplify your college experience, connecting with your community effortlessly. Unite with UnityU, to transform shared interests into shared successes.</p>
+    </div>
+    <div class="mission-column">
+      <!-- Add your image here -->
+      <img src="images/circlelo.png" alt="Mission Image">
+    </div>
+    <div class="mission-column" id="userInfoColumn">
+      <h2>User Information</h2>
+      <p>User information will be displayed here.</p>
+    </div>
+  </div>
+
+  <!-- How Can We Help -->
+  <h2>How Can We Help?</h2>
+  <div class="help-options">
+    <a href="Academics.html" class="help-option zoom">Academics</a>
+    <a href="fitness.html" class="help-option zoom">Fitness</a>
+    <a href="connections.html" class="help-option zoom">Connections</a>
+    <a href="help.html" class="help-option zoom">Rate Us!</a>
+  </div>
+</div>
+
+<footer>
+  <p>&copy; 2024 UnityU. All rights reserved.</p>
+</footer>
+
+<script>
+  // Get the user's first name (you can replace this with your logic to retrieve the user's name)
+  var firstName = "Laya"; // Example name
+  document.getElementById('userName').textContent = firstName;
+
+  // Example function to retrieve user information (replace this with your actual logic)
+  function getUserInformation() {
+    return {
+      username: "layatumbalam2",
+      email: "tumbala2@msu.edu",
+      age: 20
+    };
+  }
+
+  // Function to update user information in the third column
+  function updateUserInformation() {
+    var userInfoColumn = document.getElementById('userInfoColumn');
+    var userInfo = getUserInformation();
+    userInfoColumn.innerHTML = `
+            <h2>User Information</h2>
+            <p><strong>Username:</strong> ${userInfo.username}</p>
+            <p><strong>Email:</strong> ${userInfo.email}</p>
+            <p><strong>Age:</strong> ${userInfo.age}</p>
+        `;
+  }
+
+  // Call the function to update user information
+  updateUserInformation();
+</script>
+
+<!-- Add the ChatBot code here -->
+<!-- Start of ChatBot (www.chatbot.com) code -->
+<script type="text/javascript">
+  window.__be = window.__be || {};
+  window.__be.id = "65b607fcfb34d10007e265fb";
+  (function () {
+    var be = document.createElement('script'); be.type = 'text/javascript'; be.async = true;
+    be.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'cdn.chatbot.com/widget/plugin.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(be, s);
+  })();
+</script>
+<noscript>You need to <a href="https://www.chatbot.com/help/chat-widget/enable-javascript-in-your-browser/" rel="noopener nofollow">enable JavaScript</a> in order to use the AI chatbot tool powered by <a href="https://www.chatbot.com/" rel="noopener nofollow" target="_blank">ChatBot</a></noscript>
+<!-- End of ChatBot code -->
+
+</body>
+</html>

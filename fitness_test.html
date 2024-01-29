@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness</title>
+    <style>
+        body {
+            font-family: 'Serif', serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            color: black;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #ABC1D4;
+            color: #fff;
+            padding: 1em;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center items horizontally */
+            justify-content: center; /* Center items vertically */
+        }
+
+        header h1 {
+            margin: 10px 0 0; /* Adjusted margin for spacing */
+        }
+
+        header img {
+            height: 80px;
+            margin-top: 10px; /* Adjusted margin for spacing */
+        }
+
+        header a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 5px;
+        }
+
+        header a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            display: flex; /* Added */
+            flex: 1; /* Fill the remaining vertical space */
+        }
+
+        aside {
+            width: 15%; /* Adjust the width as needed */
+            background-color: #f0f0f0; /* Sidebar background color */
+            padding: 1em;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        section {
+            flex: 1; /* Fill the remaining space */
+            padding: 2em;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 1em;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            text-align: left;
+        }
+
+        ul li {
+            margin-bottom: 0.5em;
+        }
+
+        ul li input {
+            margin-right: 0.5em;
+        }
+
+        /*fitness color*/
+        aside h2 {
+            color: #abc1d4;
+            margin-bottom: 1em;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+    </style>
+</head>
+<body>
+
+<header>
+    <!-- Add the logo image within the h1 tag -->
+    <h1><a href="welcome.html"><img src="images/circlelo.png" alt="UnityU Logo" style="max-height: 100%;"></a>UnityU</h1>
+    <div>
+        <a href="profile.html">MyUnityU</a>
+        <a href="Academics.html">Academics</a>
+        <a href="fitness.html">Fitness</a>
+        <a href="aboutus.html">About Us</a>
+        <a href="mission.html">Mission</a>
+        <a href="help.html">Help</a>
+    </div>
+</header>
+
+<main>
+    <aside>
+        <h2>Filter:</h2>
+        <ul>
+            <li><input type="checkbox" id="Boxing" onchange="filterFitness()"> <label for="Boxing">Boxing</label></li>
+            <li><input type="checkbox" id="Cardio" onchange="filterFitness()"> <label for="Cardio">Cardio</label></li>
+            <li><input type="checkbox" id="CrossFit" onchange="filterFitness()"> <label for="CrossFit">CrossFit</label></li>
+            <li><input type="checkbox" id="Cycling" onchange="filterFitness()"> <label for="Cycling">Cycling</label></li>
+            <li><input type="checkbox" id="Dance" onchange="filterFitness()"> <label for="Dance">Dance</label></li>
+            <li><input type="checkbox" id="Golfing" onchange="filterFitness()"> <label for="Golfing">Golfing</label></li>
+            <li><input type="checkbox" id="Hiking" onchange="filterFitness()"> <label for="Hiking">Hiking</label></li>
+            <li><input type="checkbox" id="MartialArts" onchange="filterFitness()"> <label for="MartialArts">Martial Arts</label></li>
+            <li><input type="checkbox" id="Pilates" onchange="filterFitness()"> <label for="Pilates">Pilates</label></li>
+            <li><input type="checkbox" id="Running" onchange="filterFitness()"> <label for="Running">Running</label></li>
+            <li><input type="checkbox" id="Strength" onchange="filterFitness()"> <label for="Strength">Strength</label></li>
+            <li><input type="checkbox" id="Swimming" onchange="filterFitness()"> <label for="Swimming">Swimming</label></li>
+            <li><input type="checkbox" id="Walking" onchange="filterFitness()"> <label for="Walking">Walking</label></li>
+            <li><input type="checkbox" id="Weightlifting" onchange="filterFitness()"> <label for="Weightlifting">Weightlifting</label></li>
+            <li><input type="checkbox" id="Yoga" onchange="filterFitness()"> <label for="Yoga">Yoga</label></li>
+            <li><input type="checkbox" id="Zumba" onchange="filterFitness()"> <label for="Zumba">Zumba</label></li>
+        </ul>
+    </aside>
+
+    <section>
+        <h2>Fitness</h2>
+        <table id="userTable">
+            <thead>
+            <tr>
+                <th>Username</th>
+                <th>Email</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Pronouns</th>
+                <th>University</th>
+                <th>Birthday</th>
+                <th>Academic Skills</th>
+                <th>Fitness Interests</th>
+                <th>Getting Help</th>
+                <th>Giving Help</th>
+                <th>Ratings</th>
+                <th>Profile Picture</th>
+                <th>Bio</th>
+                <th>Major</th>
+                <th>Grad Year</th>
+            </tr>
+            </thead>
+            <tbody>
+            <!-- Include the generated <tr> blocks for each user record here -->
+            <tr>
+                <td>LunaHernandez7</td>
+                <td>LunaHernandez@uni.edu</td>
+                <td>Luna</td>
+                <td>Hernandez</td>
+                <td>They/Them</td>
+                <td>Michigan State University</td>
+                <td>11/8/99</td>
+                <td>Biology</td>
+                <td>Cardio, CrossFit, Cycling, Zumba</td>
+                <td>yes</td>
+                <td></td>
+                <td>5</td>
+                <td></td>
+                <td>Hi there, my name is Luna Hernandez! Some of my interests include Cardio, CrossFit, Cycling, Zumba, and Biology, and my major is Biology. Can't wait to meet you!</td>
+                <td>Biology</td>
+                <td>2017</td>
+            </tr>
+            <tr>
+                <td>CalebPatel1</td>
+                <td>CalebPatel@uni.edu</td>
+                <td>Caleb</td>
+                <td>Patel</td>
+                <td>He/Him</td>
+                <td>Michigan State University</td>
+                <td>9/30/00</td>
+                <td>Calculus</td>
+                <td>Golfing, Hiking, Pilates, Swimming, Walking</td>
+                <td>yes</td>
+                <td></td>
+                <td>2</td>
+                <td></td>
+                <td>Hi there, my name is Caleb Patel! Some of my interests include Golfing, Hiking, Pilates, Swimming, Walking, and Calculus, and my major is Marketing. Can't wait to meet you!</td>
+                <td>Marketing</td>
+                <td>2018</td>
+            </tr>
+            <tr>
+                <td>IsabellaNguyen3</td>
+                <td>IsabellaNguyen@uni.edu</td>
+                <td>Isabella</td>
+                <td>Nguyen</td>
+                <td>She/Her</td>
+                <td>Michigan State University</td>
+                <td>7/12/96</td>
+                <td>Chemistry</td>
+                <td>Strength, Weightlifting, Yoga, Zumba</td>
+                <td>yes</td>
+                <td></td>
+                <td>3</td>
+                <td></td>
+                <td>Hi there, my name is Isabella Nguyen! Some of my interests include Strength, Weightlifting, Yoga, Zumba, and Chemistry, and my major is Sociology. Can't wait to meet you!</td>
+                <td>Sociology</td>
+                <td>2019</td>
+            </tr>
+            <tr>
+                <td>LeoGarcia5</td>
+                <td>LeoGarcia@uni.edu</td>
+                <td>Leo</td>
+                <td>Garcia</td>
+                <td>He/Him</td>
+                <td>Michigan State University</td>
+                <td>2/18/01</td>
+                <td>Computer Science</td>
+                <td>Dance, Running, Yoga</td>
+                <td>yes</td>
+                <td></td>
+                <td>3</td>
+                <td></td>
+                <td>Hi there, my name is Leo Garcia! Some of my interests include Dance, Running, Yoga, and Computer Science, and my major is Political Science. Can't wait to meet you!</td>
+                <td>Political Science</td>
+                <td>2020</td>
+            </tr>
+            </tbody>
+        </table>
+    </section>
+</main>
+
+<script>
+    function filterFitness() {
+        var checkboxes = document.querySelectorAll('input[type=checkbox]:checked');
+        var table = document.getElementById("userTable");
+        var tr = table.getElementsByTagName("tr");
+
+        if (checkboxes.length === 0) {
+            // If no checkboxes are selected, display all rows
+            for (var i = 0; i < tr.length; i++) {
+                tr[i].style.display = "";
+            }
+            return;
+        }
+
+        for (var i = 0; i < tr.length; i++) {
+            var fitnessColumn = tr[i].getElementsByTagName("td")[8]; // index 8 corresponds to the "Fitness Interests" column
+            if (fitnessColumn) {
+                var interests = fitnessColumn.textContent || fitnessColumn.innerText;
+                var showRow = false;
+
+                checkboxes.forEach(function (checkbox) {
+                    if (interests.includes(checkbox.id)) {
+                        showRow = true;
+                    }
+                });
+
+                if (showRow) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Update</title>
+    <style>
+        /* Global styles */
+        body {
+            font-family: 'Serif',serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* Header styles */
+        header {
+            background-color: #ABC1D4; /* blue */
+            color: #fff;
+            padding: 1em;
+            width: 100%;
+            text-align: center;
+        }
+
+        /* Form container styles */
+        form {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px; /* Adjust form width as needed */
+            margin-top: 20px; /* Adjust top margin */
+        }
+
+        /* Input field styles */
+        label, input, button {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="date"] {
+            width: calc(100% - 22px); /* Adjust input width to fit container */
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        /* Button styles */
+        button {
+            width: 100%; /* Button width same as input fields */
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* Footer styles */
+        footer {
+            background-color: #ABC1D4; /* blue */
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+            width: 100%;
+            margin-top: auto; /* Push footer to the bottom */
+        }
+
+        /* Custom style for "Already have an account?" link */
+        .login-link {
+            color: #ABC1D4; /* Change color */
+            font-weight: normal; /* Remove bold */
+        }
+
+        .login-link:hover {
+            text-decoration: underline; /* Underline on hover */
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>UnityU</h1>
+    <a href="profile.html">MyUnityU</a>
+    <a href="aboutus.html">About Us</a>
+    <a href="mission.html">Mission</a>
+    <a href="help.html">Help</a>
+</header>
+
+<form id="profileUpdateForm">
+    <h2>Complete Your Profile </h2>
+    <label for="firstName">First Name:</label>
+    <input type="text" id="firstName" name="firstName" required><br><br>
+
+    <label for="lastName">Last Name:</label>
+    <input type="text" id="lastName" name="lastName" required><br><br>
+
+    <label for="pronouns">Preferred Pronouns:</label>
+    <input type="text" id="pronouns" name="pronouns" required><br><br>
+
+    <label for="phone">Phone Number:</label>
+    <input type="tel" id="phone" name="phone" required><br><br>
+
+    <label for="university">University:</label>
+    <input type="text" id="university" name="university" required><br><br>
+
+    <label for="gradyear">Graduation Year:</label>
+    <input type="text" id="gradyear" name="gradyear" required><br><br>
+
+    <label for="major">Major:</label>
+    <input type="text" id="major" name="major" required><br><br>
+
+    <label for="birthday">Birthday:</label>
+    <input type="date" id="birthday" name="birthday" required><br><br>
+
+    <label for="academicInt">Academic Interests: (CTRL + Click for multiple)</label><br>
+    <select id="academicInt" name="academicInt" multiple>
+        <option value="Accounting">Accounting</option>
+        <option value="Algebra">Algebra</option>
+        <option value="Biology">Biology</option>
+        <option value="Calculus">Calculus</option>
+        <option value="Chemistry">Chemistry</option>
+        <option value="Computer Science">Computer Science</option>
+        <option value="Economics">Economics</option>
+        <option value="Finite Math">Finite Math</option>
+        <option value="Foreign Languages">Foreign Languages</option>
+        <option value="Geometry">Geometry</option>
+        <option value="Geography">Geography</option>
+        <option value="History">History</option>
+        <option value="Literature">Literature</option>
+        <option value="Math">Math</option>
+        <option value="Music">Music</option>
+        <option value="Philosophy">Philosophy</option>
+        <option value="Physics">Physics</option>
+        <option value="Political Science">Political Science</option>
+        <option value="Probability">Probability</option>
+        <option value="Psychology">Psychology</option>
+        <option value="Science">Science</option>
+        <option value="Sociology">Sociology</option>
+        <option value="Speaking">Speaking</option>
+        <option value="Statistics">Statistics</option>
+        <option value="Trigonometry">Trigonometry</option>
+        <option value="Writing">Writing</option>
+    </select><br><br>
+    <label for="fitInt">Fitness Interests: (CTRL + Click for multiple)</label><br>
+    <select id="fitInt" name="fitInt" multiple>
+        <option value="Boxing">Boxing</option>
+        <option value="Cardio">Cardio</option>
+        <option value="CrossFit">CrossFit</option>
+        <option value="Cycling">Cycling</option>
+        <option value="Dance">Dance</option>
+        <option value="Golfing">Golfing</option>
+        <option value="Hiking">Hiking</option>
+        <option value="MartialArts">Martial Arts</option>
+        <option value="Pilates">Pilates</option>
+        <option value="Running">Running</option>
+        <option value="Strength">Strength</option>
+        <option value="Swimming">Swimming</option>
+        <option value="Walking">Walking</option>
+        <option value="Weightlifting">Weightlifting</option>
+        <option value="Yoga">Yoga</option>
+        <option value="Zumba">Zumba</option>
+    </select><br><br>
+
+    <label for="interests">networking Interest(s): (CTRL + Click for multiple)</label><br>
+    <select id="interests" name="interests" multiple>
+        <option value="careerExploration">Career Exploration</option>
+        <option value="connectingMajor">Connecting with Your Major</option>
+        <option value="languageExchange">Language Exchange</option>
+        <option value="communityDiscourse">Community Discourse</option>
+    </select><br><br>
+
+    <label for="bio">Create your bio: (Optional)</label>
+    <textarea id="bio" name="bio" rows="4" cols="35"></textarea><br><br>
+
+    <h3>I am interested in:</h3>
+    <div class="checkbox-group">
+        <input type="checkbox" id="gettingHelp" name="assistance" value="gettingHelp">
+        <label for="gettingHelp">Getting Help</label>
+    </div>
+    <div class="checkbox-group">
+        <input type="checkbox" id="givingHelp" name="assistance" value="givingHelp">
+        <label for="givingHelp">Giving Help</label><br><br>
+    </div>
+
+    <label for="profilePicture">Add a Profile Picture: (optional) </label>
+    <input type="file" id="profilePicture" name="profilePicture" accept="image/*"><br><br>
+
+
+<!--    <button type="submit">Create Profile </button>-->
+    <button onclick="createProfile()" style="margin-top: 10px;">Create Profile</button>
+
+
+</form>
+
+<footer>
+    <p>&copy; 2024 UnityU. All rights reserved.</p>
+</footer>
+
+<script>
+    function createProfile() {
+        window.location.href = 'welcome.html';
+    }
+</script>
+</body>
+</html>

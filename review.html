@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Review Page</title>
+  <!-- Include Font Awesome stylesheet -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha384-lU9DPNl4ZlqPXR6xPoF1RxGoCD8cwi7U5HRvRiX7ELM9zv9PGEGS2l5FpWPIBXuM" crossorigin="anonymous">
+
+  <style>
+    body {
+      font-family: 'Serif',serif;
+      margin: 0;
+      padding: 0;
+      background-color: #ffffff;
+      color: black;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      text-align: center;
+    }
+
+    header {
+      background-color: #ABC1D4;
+      color: #fff;
+      padding: 1em;
+      display: flex;
+      flex-direction: column;
+      align-items: center; /* Center items horizontally */
+      justify-content: center; /* Center items vertically */
+    }
+
+    header h1 {
+      margin: 10px 0 0; /* Adjusted margin for spacing */
+    }
+
+    header a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      margin: 5px;
+    }
+
+    header a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      padding: 2em;
+      text-align: center;
+      flex: 1;
+    }
+
+    form {
+      margin-bottom: 2em;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 0.5em;
+    }
+
+    .rating-buttons {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 1em;
+    }
+
+    .rating-buttons button,
+    button[type="button"] {
+      padding: 0.5em 1em;
+      font-size: 1em;
+      background-color: #ABC1D4;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin: 0 5px;
+      transition: transform 0.3s, background-color 0.3s; /* Added transition for zoom effect and color change */
+    }
+
+    .rating-buttons button:hover,
+    button[type="button"]:hover {
+      transform: scale(1.1); /* Zoom effect on hover */
+    }
+
+    .rating-buttons button.selected,
+    button[type="button"].selected {
+      transform: scale(1.1); /* Initial zoom effect when selected */
+      background-color: #34515e; /* Darker background color when selected */
+    }
+
+    textarea {
+      width: 100%;
+      height: 100px;
+      resize: none;
+    }
+
+    .reviews {
+      text-align: left;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .review {
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 1em;
+      margin-bottom: 1em;
+    }
+
+    footer {
+      background-color: #ABC1D4;
+      color: #fff;
+      text-align: center;
+      padding: 1em;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1><a href="welcome.html">UnityU</a></h1>
+  <div>
+    <a href="profile.html">MyUnityU</a>
+    <a href="Academics.html">Academics</a>
+    <a href="fitness.html">Fitness</a>
+    <a href="aboutus.html">About Us</a>
+    <a href="mission.html">Mission</a>
+    <a href="help.html">Help</a>
+  </div>
+</header>
+
+<main>
+  <form id="reviewForm">
+    <label for="category">Category:</label>
+    <input type="text" id="category" name="category" required>
+    <br>
+    <label for="stars">Rating:</label>
+    <div class="rating-buttons">
+      <button type="button" onclick="setRating(1)">1</button>
+      <button type="button" onclick="setRating(2)">2</button>
+      <button type="button" onclick="setRating(3)">3</button>
+      <button type="button" onclick="setRating(4)">4</button>
+      <button type="button" onclick="setRating(5)">5</button>
+    </div>
+    <br>
+    <label for="userReview">Write your review:</label>
+    <textarea id="userReview" name="userReview" required></textarea>
+    <br>
+    <button type="button" onclick="submitReview()">Submit Review</button>
+  </form>
+
+  <div class="reviews" id="reviewsContainer">
+    <!-- Reviews will be displayed here dynamically -->
+  </div>
+</main>
+
+<script>
+  let selectedRating = 0;
+
+  function setRating(rating) {
+    selectedRating = rating;
+
+    // Remove the 'selected' class from all buttons
+    const buttons = document.querySelectorAll('.rating-buttons button');
+    buttons.forEach(button => button.classList.remove('selected'));
+
+    // Add the 'selected' class to the clicked button
+    const selectedButton = document.querySelector(`.rating-buttons button:nth-child(${rating})`);
+    selectedButton.classList.add('selected');
+  }
+
+  function submitReview() {
+    // Get user input
+    const category = document.getElementById('category').value;
+    const userReview = document.getElementById('userReview').value;
+
+    // Create a new review element
+    const newReview = document.createElement('div');
+    newReview.className = 'review';
+    newReview.innerHTML = `<strong>${category}</strong><br>Rating: ${selectedRating}<br>${userReview}`;
+
+    // Insert the new review at the beginning of the reviews container
+    const reviewsContainer = document.getElementById('reviewsContainer');
+    reviewsContainer.insertBefore(newReview, reviewsContainer.firstChild);
+
+    // Clear the input fields
+    document.getElementById('category').value = '';
+    document.getElementById('userReview').value = '';
+    // Reset selectedRating
+    selectedRating = 0;
+
+    // Remove the 'selected' class from all buttons after submitting the review
+    const buttons = document.querySelectorAll('.rating-buttons button');
+    buttons.forEach(button => button.classList.remove('selected'));
+  }
+</script>
+
+</body>
+<!-- Add the ChatBot code here -->
+<!-- Start of ChatBot (www.chatbot.com) code -->
+<script type="text/javascript">
+  window.__be = window.__be || {};
+  window.__be.id = "65b607fcfb34d10007e265fb";
+  (function () {
+    var be = document.createElement('script'); be.type = 'text/javascript'; be.async = true;
+    be.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'cdn.chatbot.com/widget/plugin.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(be, s);
+  })();
+</script>
+<noscript>You need to <a href="https://www.chatbot.com/help/chat-widget/enable-javascript-in-your-browser/" rel="noopener nofollow">enable JavaScript</a> in order to use the AI chatbot tool powered by <a href="https://www.chatbot.com/" rel="noopener nofollow" target="_blank">ChatBot</a></noscript>
+<!-- End of ChatBot code -->
+
+<footer>
+  <p>&copy; 2024 UnityU. All rights reserved.</p>
+</footer>
+
+</html>
+
+
+
+

@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academics</title>
+    <style>
+        body {
+            font-family: 'Serif', serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            color: black;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #ABC1D4;
+            color: #fff;
+            padding: 1em;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center items horizontally */
+            justify-content: center; /* Center items vertically */
+        }
+
+        header h1 {
+            margin: 10px 0 0; /* Adjusted margin for spacing */
+        }
+
+        header img {
+            height: 80px;
+            margin-top: 10px; /* Adjusted margin for spacing */
+        }
+
+        header a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 5px;
+        }
+
+        header a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            display: flex;
+            flex: 1;
+            justify-content: space-between; /* Add this line to create space between aside and section */
+        }
+
+        aside {
+            width: 15%; /* Adjust the width as needed */
+            background-color: #f0f0f0; /* Sidebar background color */
+            padding: 2.5em;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start; /* Align to the left */
+        }
+
+        section {
+            flex: 1;
+            padding: 2em;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 1em;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            text-align: left;
+        }
+
+        ul li {
+            margin-bottom: 0.5em;
+        }
+
+        ul li input {
+            margin-right: 0.5em;
+        }
+
+        /*fitness color*/
+        aside h2 {
+            color: #abc1d4;
+            margin-bottom: 1em;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px; /* Adjust margin as needed */
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+    </style>
+</head>
+<body>
+
+<header>
+    <!-- Add the logo image within the h1 tag -->
+    <h1><a href="welcome.html"><img src="images/circlelo.png" alt="UnityU Logo" style="max-height: 100%;"></a>UnityU</h1>
+    <div>
+        <a href="profile.html">MyUnityU</a>
+        <a href="Academics.html">Academics</a>
+        <a href="fitness.html">Fitness</a>
+        <a href="aboutus.html">About Us</a>
+        <a href="mission.html">Mission</a>
+        <a href="help.html">Help</a>
+    </div>
+</header>
+
+<main>
+    <aside>
+        <h2>Filter:</h2>
+        <ul>
+            <li><input type="checkbox" id="Accounting" onchange="filterAcademicSubjects()"> <label for="Accounting">Accounting</label></li>
+            <li><input type="checkbox" id="Algebra" onchange="filterAcademicSubjects()"> <label for="Algebra">Algebra</label></li>
+            <li><input type="checkbox" id="Biology" onchange="filterAcademicSubjects()"> <label for="Biology">Biology</label></li>
+            <li><input type="checkbox" id="Calculus" onchange="filterAcademicSubjects()"> <label for="Calculus">Calculus</label></li>
+            <li><input type="checkbox" id="Chemistry" onchange="filterAcademicSubjects()"> <label for="Chemistry">Chemistry</label></li>
+            <li><input type="checkbox" id="ComputerScience" onchange="filterAcademicSubjects()"> <label for="ComputerScience">Computer Science</label></li>
+            <li><input type="checkbox" id="Economics" onchange="filterAcademicSubjects()"> <label for="Economics">Economics</label></li>
+            <li><input type="checkbox" id="FiniteMath" onchange="filterAcademicSubjects()"> <label for="FiniteMath">Finite Math</label></li>
+            <li><input type="checkbox" id="ForeignLanguages" onchange="filterAcademicSubjects()"> <label for="ForeignLanguages">Foreign Languages</label></li>
+            <li><input type="checkbox" id="Geometry" onchange="filterAcademicSubjects()"> <label for="Geometry">Geometry</label></li>
+            <li><input type="checkbox" id="Geography" onchange="filterAcademicSubjects()"> <label for="Geography">Geography</label></li>
+            <li><input type="checkbox" id="History" onchange="filterAcademicSubjects()"> <label for="History">History</label></li>
+            <li><input type="checkbox" id="Literature" onchange="filterAcademicSubjects()"> <label for="Literature">Literature</label></li>
+            <li><input type="checkbox" id="Math" onchange="filterAcademicSubjects()"> <label for="Math">Math</label></li>
+            <li><input type="checkbox" id="Music" onchange="filterAcademicSubjects()"> <label for="Music">Music</label></li>
+            <li><input type="checkbox" id="Philosophy" onchange="filterAcademicSubjects()"> <label for="Philosophy">Philosophy</label></li>
+            <li><input type="checkbox" id="Physics" onchange="filterAcademicSubjects()"> <label for="Physics">Physics</label></li>
+            <li><input type="checkbox" id="PoliticalScience" onchange="filterAcademicSubjects()"> <label for="PoliticalScience">Political Science</label></li>
+            <li><input type="checkbox" id="Probability" onchange="filterAcademicSubjects()"> <label for="Probability">Probability</label></li>
+            <li><input type="checkbox" id="Psychology" onchange="filterAcademicSubjects()"> <label for="Psychology">Psychology</label></li>
+            <li><input type="checkbox" id="Science" onchange="filterAcademicSubjects()"> <label for="Science">Science</label></li>
+            <li><input type="checkbox" id="Sociology" onchange="filterAcademicSubjects()"> <label for="Sociology">Sociology</label></li>
+            <li><input type="checkbox" id="Speaking" onchange="filterAcademicSubjects()"> <label for="Speaking">Speaking</label></li>
+            <li><input type="checkbox" id="Statistics" onchange="filterAcademicSubjects()"> <label for="Statistics">Statistics</label></li>
+            <li><input type="checkbox" id="Trigonometry" onchange="filterAcademicSubjects()"> <label for="Trigonometry">Trigonometry</label></li>
+            <li><input type="checkbox" id="Writing" onchange="filterAcademicSubjects()"> <label for="Writing">Writing</label></li>
+        </ul>
+    </aside>
+
+    <section>
+        <h2>Academics</h2>
+        <table id="userTable">
+            <thead>
+            <tr>
+                <th>Username</th>
+                <th>Email</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Pronouns</th>
+                <th>University</th>
+                <th>Birthday</th>
+                <th>Academic Skills</th>
+                <th>Fitness Interests</th>
+                <th>Getting Help</th>
+                <th>Giving Help</th>
+                <th>Ratings</th>
+                <th>Profile Picture</th>
+                <th>Bio</th>
+                <th>Major</th>
+                <th>Grad Year</th>
+            </tr>
+            </thead>
+            <tbody>
+            <!-- Include the generated <tr> blocks for each user record here -->
+            <tr>
+                <td>LunaHernandez7</td>
+                <td>LunaHernandez@msu.edu</td>
+                <td>Luna</td>
+                <td>Hernandez</td>
+                <td>They/Them</td>
+                <td>Michigan State University</td>
+                <td>11/8/99</td>
+                <td>Biology</td>
+                <td>Cardio, CrossFit, Cycling, Zumba</td>
+                <td>yes</td>
+                <td></td>
+                <td>5</td>
+                <td></td>
+                <td>Hi there, my name is Luna Hernandez! Some of my interests include Cardio, CrossFit, Cycling, Zumba, and Biology, and my major is Biology. Can't wait to meet you!</td>
+                <td>Biology</td>
+                <td>2017</td>
+            </tr>
+            <tr>
+                <td>CalebPatel1</td>
+                <td>CalebPatel@msu.edu</td>
+                <td>Caleb</td>
+                <td>Patel</td>
+                <td>He/Him</td>
+                <td>Michigan State University</td>
+                <td>9/30/00</td>
+                <td>Calculus</td>
+                <td>Golfing, Hiking, Pilates, Swimming, Walking</td>
+                <td>yes</td>
+                <td></td>
+                <td>2</td>
+                <td></td>
+                <td>Hi there, my name is Caleb Patel! Some of my interests include Golfing, Hiking, Pilates, Swimming, Walking, and Calculus, and my major is Marketing. Can't wait to meet you!</td>
+                <td>Marketing</td>
+                <td>2018</td>
+            </tr>
+            <tr>
+                <td>IsabellaNguyen3</td>
+                <td>IsabellaNguyen@msu.edu</td>
+                <td>Isabella</td>
+                <td>Nguyen</td>
+                <td>She/Her</td>
+                <td>Michigan State University</td>
+                <td>7/12/96</td>
+                <td>Chemistry</td>
+                <td>Strength, Weightlifting, Yoga, Zumba</td>
+                <td>yes</td>
+                <td></td>
+                <td>3</td>
+                <td></td>
+                <td>Hi there, my name is Isabella Nguyen! Some of my interests include Strength, Weightlifting, Yoga, Zumba, and Chemistry, and my major is Sociology. Can't wait to meet you!</td>
+                <td>Sociology</td>
+                <td>2019</td>
+            </tr>
+            <tr>
+                <td>LeoGarcia5</td>
+                <td>LeoGarcia@msu.edu</td>
+                <td>Leo</td>
+                <td>Garcia</td>
+                <td>He/Him</td>
+                <td>Michigan State University</td>
+                <td>2/18/01</td>
+                <td>Computer Science</td>
+                <td>Dance, Running, Yoga</td>
+                <td>yes</td>
+                <td></td>
+                <td>3</td>
+                <td></td>
+                <td>Hi there, my name is Leo Garcia! Some of my interests include Dance, Running, Yoga, and Computer Science, and my major is Political Science. Can't wait to meet you!</td>
+                <td>Political Science</td>
+                <td>2020</td>
+            </tr>
+            <tr>
+                <td>SophiaMiller9</td>
+                <td>SophiaMiller@msu.edu</td>
+                <td>Sophia</td>
+                <td>Miller</td>
+                <td>She/Her</td>
+                <td>Michigan State University</td>
+                <td>11/5/97</td>
+                <td>Swimming</td>
+                <td>Cardio, Yoga, Writing</td>
+                <td>yes</td>
+                <td>yes</td>
+                <td>4</td>
+                <td></td>
+                <td>Hey, I'm Sophia Miller! I love Swimming, Cardio, Yoga, and Writing. Studying Psychology here at MSU. Let's connect!</td>
+                <td>Psychology</td>
+                <td>2018</td>
+            </tr>
+            <tr>
+                <td>OliviaClark8</td>
+                <td>OliviaClark@msu.edu</td>
+                <td>Olivia</td>
+                <td>Clark</td>
+                <td>She/Her</td>
+                <td>Michigan State University</td>
+                <td>4/15/99</td>
+                <td>CrossFit</td>
+                <td>Strength, Running, History</td>
+                <td>yes</td>
+                <td>no</td>
+                <td>4</td>
+                <td></td>
+                <td>Hey, I'm Olivia Clark! I'm into CrossFit, Strength training, Running, and History. Majoring in Political Science. Let's chat!</td>
+                <td>Political Science</td>
+                <td>2019</td>
+            </tr>
+            <tr>
+                <td>EthanDiaz2</td>
+                <td>EthanDiaz@msu.edu</td>
+                <td>Ethan</td>
+                <td>Diaz</td>
+                <td>He/Him</td>
+                <td>Michigan State University</td>
+                <td>6/8/00</td>
+                <td>Boxing</td>
+                <td>Martial Arts, Swimming, Music</td>
+                <td>no</td>
+                <td>yes</td>
+                <td>3</td>
+                <td></td>
+                <td>Hi, I'm Ethan Diaz! I'm passionate about Boxing, Martial Arts, Swimming, and Music. Studying Computer Science. Let's connect!</td>
+                <td>Computer Science</td>
+                <td>2018</td>
+            </tr>
+            <tr>
+                <td>AvaJohnson6</td>
+                <td>AvaJohnson@msu.edu</td>
+                <td>Ava</td>
+                <td>Johnson</td>
+                <td>She/Her</td>
+                <td>Michigan State University</td>
+                <td>9/23/97</td>
+                <td>Yoga</td>
+                <td>Dance, Probability, Literature</td>
+                <td>no</td>
+                <td>yes</td>
+                <td>5</td>
+                <td></td>
+                <td>Hello, I'm Ava Johnson! I enjoy Yoga, Dance, Probability, and Literature. Majoring in Mathematics. Excited to connect!</td>
+                <td>Mathematics</td>
+                <td>2018</td>
+            </tr>
+            <tr>
+                <td>MasonReed7</td>
+                <td>MasonReed@msu.edu</td>
+                <td>Mason</td>
+                <td>Reed</td>
+                <td>He/Him</td>
+                <td>Michigan State University</td>
+                <td>3/12/98</td>
+                <td>Walking</td>
+                <td>Hiking, Philosophy, Computer Science</td>
+                <td>yes</td>
+                <td>yes</td>
+                <td>4</td>
+                <td></td>
+                <td>Hi, I'm Mason Reed! I enjoy Walking, Hiking, Philosophy, and Computer Science. Majoring in Computer Science. Let's connect!</td>
+                <td>Computer Science</td>
+                <td>2017</td>
+            </tr>
+            <tr>
+                <td>EmmaYoung5</td>
+                <td>EmmaYoung@msu.edu</td>
+                <td>Emma</td>
+                <td>Young</td>
+                <td>She/Her</td>
+                <td>Michigan State University</td>
+                <td>1/5/99</td>
+                <td>Dance</td>
+                <td>Cardio, Sociology, Writing</td>
+                <td>yes</td>
+                <td>no</td>
+                <td>3</td>
+                <td></td>
+                <td>Hello, I'm Emma Young! I'm passionate about Dance, Cardio, Sociology, and Writing. Studying Sociology. Let's connect!</td>
+                <td>Sociology</td>
+                <td>2018</td>
+            </tr>
+            <tr>
+                <td>HenryLewis3</td>
+                <td>HenryLewis@msu.edu</td>
+                <td>Henry</td>
+                <td>Lewis</td>
+                <td>He/Him</td>
+                <td>Michigan State University</td>
+                <td>10/18/00</td>
+                <td>Running</td>
+                <td>CrossFit, Political Science, History</td>
+                <td>no</td>
+                <td>yes</td>
+                <td>4</td>
+                <td></td>
+                <td>Hi, I'm Henry Lewis! I love Running, CrossFit, Political Science, and History. Majoring in Political Science. Let's connect!</td>
+                <td>Political Science</td>
+                <td>2018</td>
+            </tr>
+            <tr>
+                <td>AriaSmith1</td>
+                <td>AriaSmith@msu.edu</td>
+                <td>Aria</td>
+                <td>Smith</td>
+                <td>She/Her</td>
+                <td>Michigan State University</td>
+                <td>5/9/96</td>
+                <td>Weightlifting</td>
+                <td>Strength, Yoga, Literature</td>
+                <td>yes</td>
+                <td>no</td>
+                <td>5</td>
+                <td></td>
+                <td>Hello, I'm Aria Smith! I'm into Weightlifting, Strength training, Yoga, and Literature. Studying Literature. Let's connect!</td>
+                <td>Literature</td>
+                <td>2017</td>
+            </tr>
+            <tr>
+                <td>BenjaminKhan2</td>
+                <td>BenjaminKhan@msu.edu</td>
+                <td>Benjamin</td>
+                <td>Khan</td>
+                <td>He/Him</td>
+                <td>Michigan State University</td>
+                <td>7/7/98</td>
+                <td>Cycling</td>
+                <td>Cardio, Computer Science, Probability</td>
+                <td>no</td>
+                <td>no</td>
+                <td>3</td>
+                <td></td>
+                <td>Hi, I'm Benjamin Khan! I love Cycling, Cardio, Computer Science, and Probability. Studying Computer Science. Let's connect!</td>
+                <td>Computer Science</td>
+                <td>2018</td>
+            </tr>
+
+            <tr>
+                <td>NathanTurner4</td>
+                <td>NathanTurner@msu.edu</td>
+                <td>Nathan</td>
+                <td>Turner</td>
+                <td>He/Him</td>
+                <td>Michigan State University</td>
+                <td>8/20/98</td>
+                <td>Martial Arts</td>
+                <td>Boxing, Cycling, Sociology</td>
+                <td>no</td>
+                <td>yes</td>
+                <td>3</td>
+                <td></td>
+                <td>Hi, I'm Nathan Turner! I practice Martial Arts, Boxing, Cycling, and I'm majoring in Sociology. Excited to connect with you!</td>
+                <td>Sociology</td>
+                <td>2017</td>
+            </tr>
+            <!-- Add 8 more similar rows as needed -->
+
+            </tbody>
+        </table>
+    </section>
+</main>
+
+<script>
+    function filterAcademicSubjects() {
+        var checkboxes = document.querySelectorAll('input[type=checkbox]:checked');
+        var table = document.getElementById("userTable");
+        var rows = table.getElementsByTagName("tr");
+
+        if (checkboxes.length === 0) {
+            // If no checkboxes are selected, display all rows
+            for (var i = 0; i < rows.length; i++) {
+                rows[i].style.display = "";
+            }
+            return;
+        }
+
+        for (var i = 1; i < rows.length; i++) {
+            var academicColumn = rows[i].getElementsByTagName("td")[7]; // index 7 corresponds to the "Academic Skills" column
+            if (academicColumn) {
+                var skills = academicColumn.textContent || academicColumn.innerText;
+                var showRow = false;
+
+                checkboxes.forEach(function (checkbox) {
+                    if (skills.includes(checkbox.id)) {
+                        showRow = true;
+                    }
+                });
+
+                if (showRow) {
+                    rows[i].style.display = "";
+                } else {
+                    rows[i].style.display = "none";
+                }
+            }
+        }
+    }
+</script>
+
+
+</body>
+</html>
